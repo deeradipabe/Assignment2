@@ -7,24 +7,23 @@ import java.time.LocalTime;
 import java.util.Random;
 
 public class Main {
-    private static int randomCal()
-    {
+    private static int randomCal() {
         int min = 18;
         int max = 90;
         // int age = (int)(Math.random()*min)+max;
         Random generate = new Random();
-        return generate.nextInt(max-min) + min;
+        return generate.nextInt(max - min) + min;
     }
 
-    private static String OddEven(int num)
-    {
-        if(num%2 == 0)
+    private static String oddEven(int num) {
+        if (num % 2 == 0)
             return "even";
         else
-            return"odd";
+            return "odd";
     }
+
     public static void main(String[] args) throws IOException {
-        System.out.println("************ Asignment 1 ************");
+        System.out.println("************ Assignment 1 ************");
         System.out.print("What is your name? ");
         InputStreamReader in = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(in);
@@ -32,12 +31,9 @@ public class Main {
         int age;
         LocalTime localtime = LocalTime.now();
 
-        if(localtime.compareTo(LocalTime.NOON)< 0)
-        {
+        if (localtime.compareTo(LocalTime.NOON) < 0) {
             System.out.println("Good morning " + name);
-        }
-        else
-        {
+        } else {
             System.out.println("Good afternoon " + name);
         }
 
@@ -47,17 +43,17 @@ public class Main {
         int myAge = randomCal();
         int diff;
 
-        System.out.print("I am "+ myAge + " years old, which is ");
+        System.out.print("I am " + myAge + " years old, which is ");
 
-        if(myAge > age){
+        if (myAge > age) {
             diff = myAge - age;
-            System.out.println("which is "+diff+ " years older than you.");
-        }else {
+            System.out.println("which is " + diff + " years older than you.");
+        } else {
             diff = age - myAge;
-            System.out.println("which is "+diff+ " years younger than you.");
+            System.out.println("which is " + diff + " years younger than you.");
         }
-        System.out.println("Twice my age would be " + myAge*2);
-        System.out.println("My age is an "+ OddEven(myAge) +" number");
-        System.out.println("************ Asignment 1 done:) ************");
+        System.out.println("Twice my age would be " + myAge * 2);
+        System.out.println("My age is an " + oddEven(myAge) + " number");
+        System.out.println("************ Assignment 1 done:) ************");
     }
 }
